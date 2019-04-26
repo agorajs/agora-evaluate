@@ -48,20 +48,40 @@ export const builder = (yargs: Argv) =>
       describe: 'list of criterias to evaluate with',
       default: CRITERIAS_NAMES
     })
-    .array('initials')
-    .alias('initials', 'i')
-    .default('initials', defaultOriginFiles())
-    .describe(
-      'initials',
-      'initial graphs, retrieved from ./data/json/ by default'
-    )
-    .array('finals')
-    .alias('finals', 'f')
-    .default('finals', defaultFinalFiles())
-    .describe('finals', 'final graphs, retrieved from ./data/final/ by default')
-    .alias('output', 'r')
-    .default('output', './data/')
-    .describe('output', 'folder where the result files are saved');
+    .options({
+      initials: {
+        alias: 'i',
+        type: 'array',
+        default: defaultOriginFiles(),
+        defaultDescription:
+          'files in "' +
+          ORIGIN_FOLDER +
+          '" with ' +
+          JSON_EXT +
+          ' extension. Files with .final.json extension are ignored',
+        describe: 'List of files containing the initial graphs.'
+      },
+      finals: {
+        alias: 'f',
+        default: defaultFinalFiles(),
+        defaultDescription:
+          'files in "' +
+          FINAL_FOLDER +
+          '" with .final' +
+          JSON_EXT +
+          ' extension',
+        type: 'array',
+        describe:
+          'List of files containing the final graphs, retrieved from "' +
+          FINAL_FOLDER +
+          '" by default'
+      },
+      output: {
+        alias: 'o',
+        default: './data/',
+        describe: 'folder where the evaluation result is saved'
+      }
+    });
 
 export const handler = ({
   criterias,
