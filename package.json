@@ -6,9 +6,9 @@
   "author": "Fati Chen <chen@lirmm.fr>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.ts --target node --bundle-node-modules ",
-    "lib": "tsc ",
+    "build": "parcel build src/index.ts --target node --bundle-node-modules",
     "watch": "parcel src/index.ts --target node --bundle-node-modules ",
+    "lib": "parcel build src/lib.ts --target node -d lib",
     "start": "node dist/index.js"
   },
   "devDependencies": {
