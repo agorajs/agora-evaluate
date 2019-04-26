@@ -58,7 +58,7 @@ export const builder = (yargs: Argv) =>
     .array('finals')
     .alias('finals', 'f')
     .default('finals', defaultFinalFiles())
-    .describe('finals', 'final graphs, retrieved from ./data/json/ by default')
+    .describe('finals', 'final graphs, retrieved from ./data/final/ by default')
     .alias('output', 'r')
     .default('output', './data/')
     .describe('output', 'folder where the result files are saved');
