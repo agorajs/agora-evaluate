@@ -1,6 +1,6 @@
 {
   "name": "agora-evaluate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "repository": "git@gite.lirmm.fr:chen/agora-evaluate.git",
   "author": "Fati Chen <chen@lirmm.fr>",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "parcel build src/index.ts --target node --bundle-node-modules",
     "watch": "parcel src/index.ts --target node --bundle-node-modules ",
-    "lib": "parcel build src/lib.ts --target node -d lib",
+    "lib": "tsc",
     "start": "node dist/index.js"
   },
   "devDependencies": {
