@@ -832,9 +832,9 @@ acorn@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-"agora-criteria@git+ssh://git@gite.lirmm.fr:chen/agora-criteria.git#semver:^0.1.4":
-  version "0.1.4"
-  resolved "git+ssh://git@gite.lirmm.fr:chen/agora-criteria.git#ab366dbb2674856cc44a7e7b194b931b0275a1db"
+"agora-criteria@git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^0.2.0":
+  version "0.2.1"
+  resolved "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#416d0efb47847f5b5af868789f893654e973f12d"
   dependencies:
     "@types/d3-polygon" "^1.0.6"
     "@types/lodash" "^4.14.116"
@@ -843,9 +843,9 @@ acorn@^6.0.1:
     lodash "^4.17.11"
     mathjs "^5.1.2"
 
-"agora-graph@git+ssh://git@gite.lirmm.fr:chen/agora-graph.git#semver:^0.1.0":
+"agora-graph@git+ssh://git@gite.lirmm.fr/chen/agora-graph.git#semver:^0.1.0":
   version "0.1.0"
-  resolved "git+ssh://git@gite.lirmm.fr:chen/agora-graph.git#1944ff000404cba64bdc6d5550ebf0814bfdf629"
+  resolved "git+ssh://git@gite.lirmm.fr/chen/agora-graph.git#1944ff000404cba64bdc6d5550ebf0814bfdf629"
   dependencies:
     "@types/delaunator" "^2.0.0"
     "@types/lodash" "^4.14.116"
@@ -2038,9 +2038,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.124:
-  version "1.3.125"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.125.tgz#dbde0e95e64ebe322db0eca764d951f885a5aff2"
-  integrity sha512-XxowpqQxJ4nDwUXHtVtmEhRqBpm2OnjBomZmZtHD0d2Eo0244+Ojezhk3sD/MBSSe2nxCdGQFRXHIsf/LUTL9A==
+  version "1.3.127"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.127.tgz#9b34d3d63ee0f3747967205b953b25fe7feb0e10"
+  integrity sha512-1o25iFRf/dbgauTWalEzmD1EmRN3a2CzP/K7UVpYLEBduk96LF0FyUdCcf4Ry2mAWJ1VxyblFjC93q6qlLwA2A==
 
 elliptic@^6.0.0:
   version "6.4.1"
