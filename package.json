@@ -1,6 +1,6 @@
 {
   "name": "agora-evaluate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "repository": "git@gite.lirmm.fr:chen/agora-evaluate.git",
   "author": "Fati Chen <chen@lirmm.fr>",
