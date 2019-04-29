@@ -3,7 +3,7 @@ import CriteriaManager, {
   Spread,
   GlobalShape,
   NodeMouvement,
-  EdgeLength
+  EdgeLength as Edge
 } from 'agora-criteria';
 
 import _ from 'lodash';
@@ -21,10 +21,10 @@ export interface Information {
 }
 
 CriteriaManager.add(
-  OrthogonalOrdering.Custom,
   OrthogonalOrdering.Default,
   OrthogonalOrdering.KendallTau,
   OrthogonalOrdering.NumberInversions,
+  OrthogonalOrdering.NumberInversionsMean,
 
   Spread.BoundingBox.Area,
   Spread.BoundingBox.AreaNormalized,
@@ -39,6 +39,7 @@ CriteriaManager.add(
   NodeMouvement.DistanceMoved.MeanEuclidian,
   NodeMouvement.DistanceMoved.Normalized,
   NodeMouvement.DistanceMoved.Squared,
+  NodeMouvement.DistanceMoved.Custom,
   // NodeMouvement.KNearestNeighbors.default,
   NodeMouvement.KNearestNeighbors.setK(8),
   NodeMouvement.KNearestNeighbors.setK(9),
@@ -47,8 +48,9 @@ CriteriaManager.add(
   NodeMouvement.KNearestNeighbors.setK(12),
   NodeMouvement.MovedNodes,
 
-  EdgeLength.Ratio,
-  EdgeLength.RelativeStandardDeviation
+  Edge.Ratio,
+  Edge.RelativeStandardDeviation,
+  Edge.RelativeStandardDeviationDelaunay
 );
 
 export const CRITERIAS_NAMES = _.map<any, string>(
