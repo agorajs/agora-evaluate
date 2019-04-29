@@ -832,9 +832,9 @@ acorn@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-"agora-criteria@git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^0.2.0":
-  version "0.2.1"
-  resolved "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#416d0efb47847f5b5af868789f893654e973f12d"
+"agora-criteria@git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^0.4.1":
+  version "0.4.1"
+  resolved "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#577eb9da7c41cab0957097bc7e2e58f0f396f4d0"
   dependencies:
     "@types/d3-polygon" "^1.0.6"
     "@types/lodash" "^4.14.116"
