@@ -1,6 +1,6 @@
 {
   "name": "agora-evaluate",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "repository": "https://gite.lirmm.fr/chen/agora-evaluate",
   "author": "Fati Chen <chen@lirmm.fr>",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.123",
     "@types/yargs": "^13.0.0",
-    "agora-criteria": "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^0.4.6",
+    "agora-criteria": "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^1.0.2",
     "agora-graph": "git+ssh://git@gite.lirmm.fr/chen/agora-graph.git#semver:^0.1.0",
     "csv-stringify": "^5.3.0",
     "lodash": "^4.17.11",
