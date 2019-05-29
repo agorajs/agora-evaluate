@@ -2,8 +2,8 @@ import CriteriaManager, {
   OrthogonalOrdering,
   Spread,
   GlobalShape,
-  NodeMouvement,
-  EdgeLength as Edge
+  NodeMovement,
+  EdgeBased
 } from 'agora-criteria';
 
 import _ from 'lodash';
@@ -22,35 +22,35 @@ export interface Information {
 
 CriteriaManager.add(
   OrthogonalOrdering.Default,
-  OrthogonalOrdering.KendallTau,
+  OrthogonalOrdering.KendallTauDistance,
   OrthogonalOrdering.NumberInversions,
-  OrthogonalOrdering.NumberInversionsMean,
+  OrthogonalOrdering.NormalizedNumberInversions,
 
   Spread.BoundingBox.Area,
-  Spread.BoundingBox.AreaNormalized,
+  Spread.BoundingBox.NormalizedArea,
   Spread.BoundingBox.L1MetricLength,
   Spread.ConvexHull.Area,
 
   GlobalShape.BoundingBox.AspectRatio,
   GlobalShape.BoundingBox.AspectRatioPlus,
-  GlobalShape.ConvexHull.StandardShapePreservation,
+  GlobalShape.ConvexHull.StandardDeviation,
 
-  NodeMouvement.DistanceMoved.Hamiltonian,
-  NodeMouvement.DistanceMoved.MeanEuclidian,
-  NodeMouvement.DistanceMoved.Normalized,
-  NodeMouvement.DistanceMoved.Squared,
-  NodeMouvement.DistanceMoved.Custom,
-  // NodeMouvement.KNearestNeighbors.default,
-  NodeMouvement.KNearestNeighbors.setK(8),
-  NodeMouvement.KNearestNeighbors.setK(9),
-  NodeMouvement.KNearestNeighbors.setK(10),
-  NodeMouvement.KNearestNeighbors.setK(11),
-  NodeMouvement.KNearestNeighbors.setK(12),
-  NodeMouvement.MovedNodes,
+  NodeMovement.DistanceMoved.Hamiltonian,
+  NodeMovement.DistanceMoved.MeanEuclidean,
+  NodeMovement.DistanceMoved.NormalizedEuclidean,
+  NodeMovement.DistanceMoved.SquaredEuclidean,
+  NodeMovement.DistanceMoved.ImprovedMeanSquaredEuclidean,
+  // NodeMovement.KNearestNeighbors.default,
+  NodeMovement.KNearestNeighbors.setK(8),
+  NodeMovement.KNearestNeighbors.setK(9),
+  NodeMovement.KNearestNeighbors.setK(10),
+  NodeMovement.KNearestNeighbors.setK(11),
+  NodeMovement.KNearestNeighbors.setK(12),
+  NodeMovement.MovedNodes,
 
-  Edge.Ratio,
-  Edge.RelativeStandardDeviation,
-  Edge.RelativeStandardDeviationDelaunay
+  EdgeBased.Ratio,
+  EdgeBased.RelativeStandardDeviation,
+  EdgeBased.RelativeStandardDeviationDelaunay
 );
 
 export const CRITERIAS_NAMES = _.map<any, string>(
