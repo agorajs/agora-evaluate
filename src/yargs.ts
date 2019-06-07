@@ -107,12 +107,20 @@ export const handler = ({
     const slicedkey = key.slice(0, key.lastIndexOf('_'));
     if (mappedInitial[slicedkey] === undefined) continue;
 
-    const information = key.split('_');
+    let information = key.split('_');
+    if (information.length < 4) {
+      information = [
+        information[0],
+        '',
+        '',
+        information[information.length - 1]
+      ];
+    }
     pair[key] = {
       type: information[0],
       nodes: information[1],
       iteration: information[2],
-      algorithm: information[3],
+      algorithm: information[information.length - 1],
       initial: mappedInitial[slicedkey],
       final: mappedFinal[key]
     };
