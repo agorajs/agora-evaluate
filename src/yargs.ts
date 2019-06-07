@@ -112,7 +112,7 @@ export const handler = ({
       type: information[0],
       nodes: information[1],
       iteration: information[2],
-      algorithm: information[3],
+      algorithm: information[information.length - 1],
       initial: mappedInitial[slicedkey],
       final: mappedFinal[key]
     };
