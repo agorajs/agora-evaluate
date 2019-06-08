@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { createWriteStream, readFileSync } from 'fs';
 import { pipeline } from 'stream';
 import stringify from 'csv-stringify';
-import { Graph } from 'agora-graph';
+import { Graph, crop } from 'agora-graph';
 
 export interface Information {
   type: string;
@@ -105,9 +105,13 @@ export function evaluate(
     informations,
     ({ type, nodes, iteration, algorithm, initial, final }) => {
       try {
-        const initialGraph: Graph = JSON.parse(readFileSync(initial, 'utf8'));
+        const initialGraph: Graph = crop(
+          JSON.parse(readFileSync(initial, 'utf8'))
+        );
+        const updatedGraph: Graph = crop(
+          JSON.parse(readFileSync(final, 'utf8'))
+        );
         initialGraph.nodes.sort((a, b) => a.index - b.index);
-        const updatedGraph: Graph = JSON.parse(readFileSync(final, 'utf8'));
         updatedGraph.nodes.sort((a, b) => a.index - b.index);
         console.log(initial, algorithm);
 
