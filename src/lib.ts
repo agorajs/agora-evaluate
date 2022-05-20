@@ -3,7 +3,7 @@ import CriteriaManager, {
   Spread,
   GlobalShape,
   NodeMovement,
-  EdgeBased
+  EdgeBased,
 } from 'agora-criteria';
 
 import _ from 'lodash';
@@ -22,7 +22,7 @@ export interface Information {
 }
 
 CriteriaManager.add(
-  OrthogonalOrdering.Default,
+  OrthogonalOrdering.Original,
   OrthogonalOrdering.KendallTauDistance,
   OrthogonalOrdering.NumberInversions,
   OrthogonalOrdering.NormalizedNumberInversions,
@@ -33,7 +33,7 @@ CriteriaManager.add(
   Spread.ConvexHull.Area,
 
   GlobalShape.BoundingBox.AspectRatio,
-  GlobalShape.BoundingBox.AspectRatioPlus,
+  GlobalShape.BoundingBox.ImprovedAspectRatio,
   GlobalShape.ConvexHull.StandardDeviation,
 
   NodeMovement.DistanceMoved.Hamiltonian,
@@ -56,7 +56,7 @@ CriteriaManager.add(
 
 export const CRITERIAS_NAMES = _.map<any, string>(
   CriteriaManager.criterias,
-  crit => crit.short
+  (crit) => crit.short
 ).sort();
 
 export function evaluate(
@@ -78,10 +78,8 @@ export function evaluate(
 
   const criterias = _.filter(
     CriteriaManager.criterias,
-    c => c.short !== undefined && criteriasShort.includes(c.short)
+    (c) => c.short !== undefined && criteriasShort.includes(c.short)
   );
-
-  const resultFile = folder + new Date().getTime() + '.csv';
 
   const columns: string[] = [
     'type',
@@ -89,15 +87,18 @@ export function evaluate(
     'm',
     'iteration',
     'algorithm',
-    ..._.map(criterias, 'name')
+    ..._.map(criterias, 'name'),
   ];
   const stringifier = stringify({
     delimiter: ';',
     header: true,
-    columns
+    columns,
   });
+
+  const resultFile = folder + new Date().getTime() + '.csv';
   const writeStream = createWriteStream(resultFile);
-  pipeline(stringifier, writeStream, err => {
+
+  pipeline(stringifier, writeStream, (err) => {
     if (err) console.error('error writing the results', err);
   });
 
@@ -120,19 +121,22 @@ export function evaluate(
           n: nodes,
           m: initialGraph.edges.length,
           iteration: iteration,
-          algorithm
+          algorithm,
         };
 
-        _.forEach(criterias, c => {
+        _.forEach(criterias, (c) => {
           const initialPayload = {
-            nodes: _.map(initialGraph.nodes, n => ({ ...n })),
-            edges: _.map(initialGraph.edges, e => ({ ...e }))
+            nodes: _.map(initialGraph.nodes, (n) => ({ ...n })),
+            edges: _.map(initialGraph.edges, (e) => ({ ...e })),
           };
           const updatedPayload = {
-            nodes: _.map(updatedGraph.nodes, n => ({ ...n })),
-            edges: _.map(updatedGraph.edges, e => ({ ...e }))
+            nodes: _.map(updatedGraph.nodes, (n) => ({ ...n })),
+            edges: _.map(updatedGraph.edges, (e) => ({ ...e })),
           };
           const result = c.criteria(initialPayload, updatedPayload);
+          // const json_result =
+          //   folder + new Date().getTime() + '_' + c.short + '.json';
+          // writeFileSync(json_result, JSON.stringify(result));
           csvRow[c.name] = result.value;
         });
 

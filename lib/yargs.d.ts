@@ -1,7 +1,7 @@
 import { Argv } from 'yargs';
 export declare const command = "evaluate [criterias..]";
 export declare const describe = "evaluate the files with the algorithms";
-export declare const builder: (yargs: Argv<{}>) => Argv<import("yargs").Omit<{
+export declare const builder: (yargs: Argv) => Argv<import("yargs").Omit<{
     criterias: string[];
 }, "finals" | "initials" | "output"> & import("yargs").InferredOptionTypes<{
     initials: {
