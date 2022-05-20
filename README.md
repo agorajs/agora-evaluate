@@ -16,11 +16,11 @@ Will run `eb_r`, `eb_rsd`, `sp_bb_l1ml` metric against all results contained in 
 
 Final graphs must be named :
 
-> `<name>_<nodes>_<iteration>_<algorithm>.final.json` (ex: `pa_10_2_fta.final.json`)
+`<name>_<nodes>_<iteration>_<algorithm>.final.json` (ex: `pa_10_2_fta.final.json`)
 
 **or**
 
-> `<name>_<algorithm>.final.json` (ex: `badvoro_fta.final.json`)
+`<name>_<algorithm>.final.json` (ex: `badvoro_fta.final.json`)
 
 Initial graphs must have the same name "logic" as the given final graphs. If the final graphs are named as `pa_10_2_fta.final.json` there must be an initial graph named `pa_10_2.json`. Of course, if the final graph is named as `badvoro_fta.final.json` there must be an initial graph with the name `badvoro.json`.
 
