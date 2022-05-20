@@ -10,13 +10,19 @@ Basic example :
 $ yarn start eb_r eb_rsd sp_bb_l1ml #  or npm run start
 ```
 
-Will run `eb_r`, `eb_rsd`, `sp_bb_l1ml` metric against all results contained in `./data/json/` (initial graphs) and `./data/final/` (final graphs) and will ouptut the result in `./data/` in a csv file.
+Will run `eb_r`, `eb_rsd`, `sp_bb_l1ml` metric against all results contained in `./data/json/` (initial graphs) and `./data/final/` (final graphs) and will output the result in `./data/` in a csv file.
 
 ### Remarks
 
-Final graphs must be named `<name>_<nodes>_<iteration>_<algorithm>.final.json` (ex: `pa_10_2_fta.final.json`) **or** `<name>_<algorithm>.final.json` (ex: `badvoro_fta.final.json`)
+Final graphs must be named :
 
-Initial graphs must have the same name logic as the given final graphs. If the final graphs are named as `pa_10_2_fta.final.json` there must be an initial graph named `pa_10_2_fta.json`. Of course, if the final graph is named as `badvoro_fta.final.json` there must be an initial graph with the name `badvoro.json`.
+> `<name>_<nodes>_<iteration>_<algorithm>.final.json` (ex: `pa_10_2_fta.final.json`)
+
+**or**
+
+> `<name>_<algorithm>.final.json` (ex: `badvoro_fta.final.json`)
+
+Initial graphs must have the same name "logic" as the given final graphs. If the final graphs are named as `pa_10_2_fta.final.json` there must be an initial graph named `pa_10_2.json`. Of course, if the final graph is named as `badvoro_fta.final.json` there must be an initial graph with the name `badvoro.json`.
 
 ## Additional arguments and defaults
 
