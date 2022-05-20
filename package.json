@@ -1,30 +1,31 @@
 {
   "name": "agora-evaluate",
   "version": "1.2.3",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "repository": "https://gite.lirmm.fr/chen/agora-evaluate",
   "author": "Fati Chen <chen@lirmm.fr>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build src/index.ts --target node --bundle-node-modules",
-    "watch": "parcel src/index.ts --target node --bundle-node-modules ",
+    "build": "parcel build src/index.ts",
+    "watch": "parcel src/index.ts ",
     "lib": "tsc",
     "start": "node dist/index.js",
     "release:start": "git flow release start",
     "release:end": "git flow release finish -p"
   },
   "devDependencies": {
-    "@types/node": "^11.13.7",
-    "parcel": "^1.12.3",
-    "typescript": "^3.4.5"
+    "@types/node": "^12.7.9",
+    "parcel": "^2.5.0",
+    "typescript": "^4.6.4"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.123",
-    "@types/yargs": "^13.0.0",
-    "agora-criteria": "git+ssh://git@gite.lirmm.fr/chen/agora-criteria.git#semver:^1.0.2",
-    "agora-graph": "git+ssh://git@gite.lirmm.fr/chen/agora-graph.git#semver:^0.1.0",
+    "@types/lodash": "^4.14.141",
+    "@types/yargs": "^13.0.3",
+    "agora-criteria": "agorajs/agora-criteria#semver:^2.2.1",
+    "agora-graph": "agorajs/agora-graph#semver:^1",
     "csv-stringify": "^5.3.0",
-    "lodash": "^4.17.11",
-    "yargs": "^13.2.2"
+    "lodash": "^4.17.15",
+    "yargs": "^13.3.0"
   }
 }
